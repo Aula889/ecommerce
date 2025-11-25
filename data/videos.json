@@ -1,0 +1,4 @@
+[
+  { "id": "v1", "title": "Video 1", "type": "file", "mp4": "videos/video 1.mp4", "poster": "assets/1.jpg" },
+  { "id": "v2", "title": "Video 2", "type": "file", "mp4": "videos/2.mp4", "poster": "assets/2.jpg" }
+]

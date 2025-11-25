@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<!-- index.html — entrada do front-end (SPA simples). -->
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Agente de IA — consultoria, agentes conversacionais WhatsApp, leitura de documentos e reestruturação empresarial.">
+	<title>Agente de IA — Consultoria & Atendimento Autônomo</title>
+
+	<!-- Styles básicos divididos em arquivos modulares (variáveis, reset/é base, layout, componentes) -->
+	<link rel="stylesheet" href="css/variables.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+	<!-- Header: logo + nav + menu mobile (hash routes) -->
+	<header class="site-header" role="banner">
+		<div class="container header-inner">
+			<!-- Logo do site (clicável para voltar à home) -->
+			<a href="#/" class="logo" aria-label="Agente de IA">AgenteIA</a>
+
+			<!-- Menu principal (desktop). `data-route` indica que o app.js controla a navegação -->
+			<nav class="main-nav" role="navigation" aria-label="Menu principal">
+				<a href="#/" data-route>Home</a>
+				<a href="#/services" data-route>Serviços</a>
+				<a href="#/shop" data-route>Loja</a>
+				<!-- Link para admin.html (painel local, front-end) -->
+				<a href="admin.html">Sobre Nós</a>
+			</nav>
+
+			<!-- Botão para alternar abertura/fechamento do menu em telas pequenas -->
+			<button id="openMenu" class="menu-toggle" aria-expanded="false" aria-controls="mainMenu">☰</button>
+		</div>
+	</header>
+
+	<!-- Main: conteúdo dinâmico injetado em #app pelo roteador -->
+	<main id="app" class="container" role="main">
+		<!-- Conteúdo dinâmico será injetado aqui por js/app.js -->
+	</main>
+
+	<!-- Footer: copyright e atalho WhatsApp -->
+	<footer class="site-footer" role="contentinfo">
+		<div class="container footer-inner">
+			<div>
+				<p>© <span id="year"></span> Agente de IA — Consultoria & Atendimento Autônomo</p>
+			</div>
+			<div>
+				<!-- botão que abre o WhatsApp (evento atrelado por js/whatsapp.js) -->
+				<a id="footer-whatsapp" class="btn btn-ghost" href="#">Abrir WhatsApp</a>
+			</div>
+		</div>
+	</footer>
+
+	  <!-- Botão flutuante do WhatsApp (atalho) -->
+	  <button id="whatsapp-float" class="whatsapp-float" aria-label="Abrir WhatsApp">💬</button>
+
+	<!-- Scripts principais (defer) -->
+	<script defer src="js/app.js"></script>
+	<script defer src="js/shop.js"></script>
+	<script defer src="js/cart.js"></script>
+	<script defer src="js/whatsapp.js"></script>
+	<script defer src="js/docreader.js"></script>
+
+	<script>
+		// Atualiza o ano no rodapé
+		document.getElementById('year').textContent = new Date().getFullYear();
+
+		// Mobile menu toggle: adiciona/retira classe .open para mostrar/ocultar navegação responsiva
+		const btn = document.getElementById('openMenu');
+		btn.addEventListener('click', () => {
+			const expanded = btn.getAttribute('aria-expanded') === 'true';
+			btn.setAttribute('aria-expanded', String(!expanded));
+			document.querySelector('.main-nav').classList.toggle('open');
+		});
+		// Nota: o roteador em js/app.js injeta as páginas em #app
+	</script>
+</body>
+</html>

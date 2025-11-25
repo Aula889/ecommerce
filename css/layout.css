@@ -1,0 +1,44 @@
+.site-header {
+  background: rgba(2,6,23,0.6);
+  position: sticky; top: 0; z-index: 40; backdrop-filter: blur(6px);
+}
+
+.header-inner { display:flex; gap:var(--gap); align-items:center; justify-content:space-between; padding:.8rem 0; }
+
+.logo { font-weight:700; font-size:1.1rem; color:var(--text); }
+
+.main-nav { display:flex; gap:.8rem; align-items:center; }
+
+.main-nav a { padding:.45rem .6rem; border-radius:6px; color:var(--muted); }
+
+.main-nav a:hover, .main-nav a:focus { color:var(--text); background:rgba(255,255,255,0.02); }
+
+.main-nav.open { display:block; }
+.menu-toggle { display:none; }
+
+.site-footer { border-top:1px solid rgba(255,255,255,0.03); margin-top:2rem; padding:1.2rem 0; }
+
+.footer-inner { display:flex; justify-content:space-between; gap:1rem; align-items:center; }
+
+/* Responsive (mobile menu) */
+@media (max-width:900px){
+  .main-nav {
+    display: none; /* inicialmente escondido no mobile */
+    position: absolute;
+    top: 64px;
+    left: 0; right: 0;
+    background: linear-gradient(180deg, rgba(2,6,23,0.95), rgba(2,6,23,0.98));
+    padding: 1rem;
+  }
+  .menu-toggle {
+    /* botão para abrir menu no mobile */
+    display: inline-block;
+    background: transparent;
+    border: 0;
+    color: var(--text);
+    font-size: 1.2rem;
+  }
+}
+
+/* Grid utilitário: organiza cards e colunas responsivas */
+.grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <!--
+    admin.html
+    ---------------------------------------------------------------
+    Painel / área administrativa (front-end) para editar e exportar `data/products.json`.
+    - Este arquivo fornece uma UI simples que carrega `js/admin.js` para lidar com produtos
+    - Observação: sem backend as alterações são salvas apenas no localStorage do navegador
+  -->
+    <!-- admin.html — painel front-end para editar products.json (salva no localStorage) -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre Nossa Empresa</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    .sobre-wrapper {
+      max-width: 800px;
+      margin: 3rem auto;
+      text-align: center;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .sobre-wrapper p {
+      margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+      text-align: center;
+      width: 100%;
+    }
+
+    header a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Cabeçalho da página administrativa (título e link para voltar) -->
+    <header style="display:flex; justify-content:space-between; align-items:center">
+      <h1>Sobre Nossa Empresa</h1>
+      <!-- Volta para a home (index.html) -->
+      <a href="index.html">Voltar</a>
+    </header>
+
+    <div class="sobre-wrapper">
+      <p>
+        Somos uma empresa especializada em soluções inteligentes para transformar a forma como 
+        negócios atendem, vendem e se conectam com seus clientes. Unimos tecnologia, automação 
+        e consultoria estratégica para entregar resultados reais, seja através de agentes de 
+        IA personalizados, atendimento automático no WhatsApp ou serviços de estruturação e 
+        crescimento empresarial.
+      </p>
+
+      <p>
+        Acreditamos que todo negócio — pequeno ou grande — pode alcançar mais eficiência e 
+        lucratividade quando utiliza a tecnologia de forma correta e acessível. Por isso, 
+        desenvolvemos soluções sob medida, fáceis de usar e totalmente focadas nas necessidades 
+        de cada cliente.
+      </p>
+
+      <p>
+        Nosso compromisso é simplificar processos, aumentar produtividade e ajudar empresas a 
+        evoluírem com inovação de verdade. Trabalhamos com transparência, proximidade e foco 
+        total em resultados.
+      </p>
+
+      <p>
+        Seja para automatizar atendimentos, otimizar vendas, analisar documentos ou reestruturar 
+        sua operação, estamos aqui para levar sua empresa ao próximo nível.
+      </p>
+    </div>
+
+    <!--
+      Aqui o script `js/admin.js` monta a interface de edição de products.json.
+      - Carrega produtos existentes (data/products.json)
+      - Permite editar campos e salvar no localStorage
+      - Permite baixar (exportar) o JSON atualizado para ser enviado a um servidor
+    -->
+      <!-- Area administrativa montada por js/admin.js (editar produtos / exportar JSON) -->
+    <div id="adminApp"></div>
+
+    
+
+  <!-- script de administração (monta a interface e faz operações em localStorage) -->
+    <!-- script de administração (js/admin.js) -->
+  <script defer src="js/admin.js"></script>
+</body>
+</html>

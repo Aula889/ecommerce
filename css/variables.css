@@ -1,0 +1,28 @@
+/* css/variables.css — variáveis do tema (cores, espaçamento, radius) */
+:root {
+  /* Fundo da página (gradiente) */
+  --bg: #e6f7ff; /* cor principal do fundo (claro, azul suave) */
+  --bg-alt: #d7f0fb; /* segundo stop do gradiente de fundo */
+
+  /* Background dos cartões (cards) */
+  --card: #0b1220;
+
+  /* Cores de texto: --text (página), --card-text (cards) */
+  --text: #042033; /* texto primário da página */
+  --card-text: #e6eef8; /* texto dentro de cards */
+
+  /* Utilitários */
+  --muted: #5b6e7a;
+  --accent: #06b6d4;
+  --accent-contrast: #ffffff;
+  --success: #10b981;
+  --danger: #ef4444;
+  /* Espaçamento e aparência global */
+  --max-width: 1100px; /* largura máxima do container central */
+  --radius: 10px; /* raio de borda padrão para cartões/botões */
+  --gap: 1rem; /* espaçamento padrão entre elementos */
+  --shadow: 0 6px 18px rgba(2,6,23,0.12); /* sombra padrão para elevar cards */
+}
+
+/* Accessibility helpers */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }

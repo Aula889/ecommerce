@@ -1,0 +1,106 @@
+/* css/components.css — cards, badges, modals, helpers */
+
+/* Card base: fundo, padding e sombra (utilizado por cards de produtos, depoimentos, etc.) */
+.card {
+	background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	padding: 1rem;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+}
+
+/* Títulos dentro de card devem usar cor pensada para o contraste do cartão */
+.card h3 { color: var(--card-text); }
+.card p { color: var(--muted); font-size: .95rem; }
+
+/* Badge: rótulo pequeno (ex.: "Mais vendido") usado para chamar atenção */
+.badge {
+	background: var(--accent);
+	color: var(--accent-contrast);
+	padding: .2rem .5rem;
+	border-radius: 999px;
+	font-size: .8rem;
+}
+
+/* Imagem do produto: área com tamanho definido e centralização */
+.product-image {
+	height: 160px; /* altura fixa para manter proporção visual entre cards */
+	background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.03));
+	border-radius: 8px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Info/meta do produto: preço e ações (botões) alinhados à direita */
+.product-meta { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+
+/* Botão flutuante do WhatsApp: posicionado no canto inferior direito */
+.whatsapp-float {
+	position: fixed;
+	right: 18px;
+	bottom: 18px;
+	width: 56px; height: 56px;
+	border-radius: 50%;
+	background: var(--accent);
+	color: var(--accent-contrast);
+	border: 0;
+	box-shadow: 0 8px 20px rgba(2,6,23,0.08);
+	font-size: 20px;
+	cursor: pointer;
+}
+
+/* Modal: backdrop e centrar o conteúdo modal */
+.modal {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(2,6,23,0.6);
+}
+.modal .modal-body {
+	background: var(--card);
+	padding: 1rem;
+	border-radius: 8px;
+	max-width: 900px;
+	width: 100%;
+}
+
+/* Form helpers: linha/controle para formulários */
+.form-row { display: flex; gap: .6rem; }
+.form-control {
+	width: 100%;
+	padding: .6rem;
+	border-radius: 6px;
+	border: 1px solid rgba(255,255,255,0.04);
+	background: transparent;
+	color: var(--text);
+}
+
+/* Sumário do carrinho: caixa com subtotal/total e botões */
+.cart-summary { background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); padding: 1rem; border-radius: 8px; }
+
+/* Utilities (pequenas classes de uso comum) */
+.muted { color: var(--muted); }
+.text-right { text-align: right; }
+
+/* Estilos específicos para cards de vídeo (home/videos)
+	 - Garantem 16:9 e que o player preencha o espaço sem distorção
+*/
+.card.video-card { display: flex; flex-direction: column; gap: .6rem; }
+.card.video-card h4 { margin: 0; font-size: 1rem; color: var(--text); }
+.card.video-card .video-wrap {
+	width: 100%;
+	aspect-ratio: 16/9; /* garante proporção do vídeo */
+	background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.03));
+	border-radius: 8px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.card.video-card .video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Forçar alinhamento vertical consistente para cards em grid */
+.grid > .card { display: flex; flex-direction: column; }

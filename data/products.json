@@ -1,0 +1,8 @@
+[
+  { "id": 1, "title": "Implantação de Agente IA (Básico)", "short": "Chatbot WhatsApp para perguntas frequentes.", "price": 1200.00, "image": "agent-basic.svg" },
+  { "id": 2, "title": "Implantação de Agente IA (Pro)", "short": "Automação de vendas e integração CRM.", "price": 4200.00, "image": "agent-pro.svg" },
+  { "id": 3, "title": "Pacote Consultoria Comercial - 1 mês", "short": "Diagnóstico, script de vendas e treinamento.", "price": 3000.00, "image": "consult-1m.svg" },
+  { "id": 4, "title": "Consultoria Reestruturação", "short": "Plano completo para reestruturação comercial/operacional.", "price": 9800.00, "image": "consult-full.svg" },
+  { "id": 5, "title": "Suporte Mensal", "short": "Suporte e otimizações contínuas (mensal).", "price": 650.00, "image": "support-monthly.svg" },
+  { "id": 6, "title": "Análise de Documentos (PDF/OCR)", "short": "Extração de dados e sumário executivo.", "price": 450.00, "image": "doc-ocr.svg" }
+]
