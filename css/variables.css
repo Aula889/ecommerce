@@ -1,27 +1,27 @@
 /* css/variables.css — variáveis do tema (cores, espaçamento, radius) */
 :root {
-  /* Fundo da página (gradiente) */
-  --bg: #e6f7ff; /* cor principal do fundo (claro, azul suave) */
-  --bg-alt: #d7f0fb; /* segundo stop do gradiente de fundo */
+  /* Fundo da página (gradiente) -> preto profundo com variação sutil */
+  --bg: #0b0b0b; /* cor principal do fundo (preto) */
+  --bg-alt: #0f0f0f; /* segundo stop do gradiente (mais claro que o fundo) */
 
   /* Background dos cartões (cards) */
-  --card: #0b1220;
+  --card: #0f1112; /* cartão em tom muito escuro para contraste com o background */
 
   /* Cores de texto: --text (página), --card-text (cards) */
-  --text: #042033; /* texto primário da página */
-  --card-text: #0752ad; /* texto dentro de cards */
+  --text: #f5f5f5; /* texto primário claro para contraste sobre preto */
+  --card-text: #ffffff; /* texto dentro de cards */
 
   /* Utilitários */
-  --muted: #5b6e7a;
-  --accent: #06b6d4;
-  --accent-contrast: #ffffff;
+  --muted: #c0c0c0;
+  --accent: #ffd400; /* amarelo vibrante */
+  --accent-contrast: #0b0b0b; /* cor do texto quando o fundo é amarelo (preto) */
   --success: #10b981;
   --danger: #ef4444;
   /* Espaçamento e aparência global */
   --max-width: 1100px; /* largura máxima do container central */
   --radius: 10px; /* raio de borda padrão para cartões/botões */
   --gap: 1rem; /* espaçamento padrão entre elementos */
-  --shadow: 0 6px 18px rgba(2,6,23,0.12); /* sombra padrão para elevar cards */
+  --shadow: 0 8px 28px rgba(0,0,0,0.6); /* sombra mais forte em fundo escuro */
 }
 
 /* Accessibility helpers */

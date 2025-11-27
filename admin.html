@@ -4,11 +4,10 @@
   <!--
     admin.html
     ---------------------------------------------------------------
-    Painel / área administrativa (front-end) para editar e exportar `data/products.json`.
-    - Este arquivo fornece uma UI simples que carrega `js/admin.js` para lidar com produtos
-    - Observação: sem backend as alterações são salvas apenas no localStorage do navegador
+    Página 'Sobre Nossa Empresa' (informativa). A funcionalidade de admin/edição de produtos foi removida
+    quando a loja foi eliminada do projeto.
   -->
-    <!-- admin.html — painel front-end para editar products.json (salva no localStorage) -->
+    <!-- admin.html — página informativa sobre a empresa (admin/loja removidos) -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sobre Nossa Empresa</title>
@@ -39,6 +38,10 @@
       text-decoration: none;
       font-weight: bold;
     }
+    /* Page enter/leave for smooth transitions when navigating from index.html */
+    body{ opacity:0; transform: translateY(6px); transition: opacity .28s ease, transform .28s cubic-bezier(.2,.9,.2,1); }
+    body.page-visible{ opacity:1; transform: translateY(0); }
+    body.page-hide{ opacity:0; transform: translateY(8px); }
   </style>
 </head>
 
@@ -46,45 +49,50 @@
   <div class="container">
     <!-- Cabeçalho da página administrativa (título e link para voltar) -->
     <header style="display:flex; justify-content:space-between; align-items:center">
-      <h1>Sobre Nossa Empresa</h1>
+      <h1> Nosso Método</h1>
       <!-- Volta para a home (index.html) -->
       <a href="index.html">Voltar</a>
     </header>
 
     <div class="sobre-wrapper">
-      <p>
-        Somos uma empresa especializada em soluções inteligentes para transformar a forma como 
-        negócios atendem, vendem e se conectam com seus clientes. Unimos tecnologia, automação 
-        e consultoria estratégica para entregar resultados reais, seja através de agentes de 
-        IA personalizados, atendimento automático no WhatsApp ou serviços de estruturação e 
-        crescimento empresarial.
-      </p>
-
-      <p>
-        Acreditamos que todo negócio — pequeno ou grande — pode alcançar mais eficiência e 
-        lucratividade quando utiliza a tecnologia de forma correta e acessível. Por isso, 
-        desenvolvemos soluções sob medida, fáceis de usar e totalmente focadas nas necessidades 
-        de cada cliente.
-      </p>
-
-      <p>
-        Nosso compromisso é simplificar processos, aumentar produtividade e ajudar empresas a 
-        evoluírem com inovação de verdade. Trabalhamos com transparência, proximidade e foco 
-        total em resultados.
-      </p>
-
-      <p>
-        Seja para automatizar atendimentos, otimizar vendas, analisar documentos ou reestruturar 
-        sua operação, estamos aqui para levar sua empresa ao próximo nível.
+      <p>A partir do desenho de processo de todas as áreas da empresa, identificaremos
+  oportunidades de redução de custos, ajustes em sistemas, redesenho do
+  organograma e construção de agentes para redução de custos e aumento da
+  produtividade. 
       </p>
     </div>
 
-    <!--
-      Aqui o script `js/admin.js` monta a interface de edição de products.json.
-      - Carrega produtos existentes (data/products.json)
-      - Permite editar campos e salvar no localStorage
-      - Permite baixar (exportar) o JSON atualizado para ser enviado a um servidor
-    -->
+    <!-- A JORNADA: timeline / evolução da empresa -->
+    <section class="timeline card" aria-labelledby="jornada-title">
+      <h2 id="jornada-title">A Jornada</h2>
+      <div class="timeline-grid">
+        <div class="timeline-item">
+          <div class="timeline-date">1</div>
+          <h4>Mapeamento de Processos </h4>
+          <p>Análise profunda de todos os processos da sua empresa.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2</div>
+          <h4>Priorização dos Agentes</h4>
+          <p>Identificação e priorização dos agentes de IA mais impactantes.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">3</div>
+          <h4>Construção</h4>
+          <p>Desenvolvimento dos agentes de IA customizados.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">4</div>
+          <h4>Implementação e Entrega</h4>
+          <p>Implantação e acompanhamento dos resultados.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Painel administrativo simplificado (página 'Sobre Nossa Empresa') -->
       <!-- Area administrativa montada por js/admin.js (editar produtos / exportar JSON) -->
     <div id="adminApp"></div>
 
@@ -92,6 +100,24 @@
 
   <!-- script de administração (monta a interface e faz operações em localStorage) -->
     <!-- script de administração (js/admin.js) -->
-  <script defer src="js/admin.js"></script>
+  <!-- admin.js removido (loja / edição de products.json foi removida) -->
+
+  <script>
+    // Fade-in when the page loads (trigger after paint)
+    (function(){
+      requestAnimationFrame(()=> document.body.classList.add('page-visible'));
+
+      // Smoothly animate when clicking back to index
+      const back = document.querySelector('a[href="index.html"]');
+      if(back){
+        back.addEventListener('click', (e)=>{
+          e.preventDefault();
+          document.body.classList.remove('page-visible');
+          document.body.classList.add('page-hide');
+          setTimeout(()=> window.location = 'index.html', 260);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

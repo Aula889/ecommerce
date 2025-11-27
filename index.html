@@ -19,13 +19,14 @@
 	<header class="site-header" role="banner">
 		<div class="container header-inner">
 			<!-- Logo do site (clicável para voltar à home) -->
-			<a href="#/" class="logo" aria-label="Agente de IA">AgenteIA</a>
+			<a href="#/" class="logo" aria-label="Agente de IA">ReduceTech</a>
 
 			<!-- Menu principal (desktop). `data-route` indica que o app.js controla a navegação -->
 			<nav class="main-nav" role="navigation" aria-label="Menu principal">
 				<a href="#/" data-route>Home</a>
 				<a href="#/services" data-route>Serviços</a>
-				<a href="#/shop" data-route>Loja</a>
+				<a href="#/estrutura" data-route>Estrutura e Segurança</a>
+				<!-- Loja removida -->
 				<!-- Link para admin.html (painel local, front-end) -->
 				<a href="admin.html">Sobre Nós</a>
 			</nav>
@@ -44,11 +45,11 @@
 	<footer class="site-footer" role="contentinfo">
 		<div class="container footer-inner">
 			<div>
-				<p>© <span id="year"></span> Agente de IA — Consultoria & Atendimento Autônomo</p>
+				<p>© <span id="year"></span> ReduceTech</p>
 			</div>
 			<div>
 				<!-- botão que abre o WhatsApp (evento atrelado por js/whatsapp.js) -->
-				<a id="footer-whatsapp" class="btn btn-ghost" href="#">Abrir WhatsApp</a>
+				<a id="footer-whatsapp" class="btn btn-ghost" href="#">Fale com nosso time clicando por aqui, ou no botão ao lado</a>
 			</div>
 		</div>
 	</footer>
@@ -58,7 +59,7 @@
 
 	<!-- Scripts principais (defer) -->
 	<script defer src="js/app.js"></script>
-	<script defer src="js/shop.js"></script>
+	<!-- script da loja removido (js/shop.js) -->
 	<script defer src="js/cart.js"></script>
 	<script defer src="js/whatsapp.js"></script>
 	<script defer src="js/docreader.js"></script>

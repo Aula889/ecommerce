@@ -40,4 +40,6 @@ button { font: inherit; }
   cursor: pointer;
   font-weight: 600;
 }
-.btn-ghost { background: transparent; border: 1px solid rgba(0,0,0,0.06); padding: .4rem .7rem; border-radius: 6px; color: var(--accent); font-weight: 600; }
+.btn-ghost { background: transparent; border: 1px solid rgba(255,212,0,0.12); padding: .4rem .7rem; border-radius: 6px; color: var(--accent); font-weight: 700; }
+
+.btn:hover{ filter: brightness(.95); transform: translateY(-1px); transition: transform .12s cubic-bezier(.2,.8,.2,1); }

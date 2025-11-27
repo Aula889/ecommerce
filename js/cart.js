@@ -37,9 +37,9 @@
     if(!app) return;
     app.innerHTML = '<section class="card"><h1>Seu Carrinho</h1></section>';
 
-    // Se vazio, mostramos um link para voltar à loja
+    // Se vazio, mostramos um link para nossas áreas / serviços
     if(cart.length===0){
-      app.innerHTML += '<p class="muted">Seu carrinho está vazio. <a href="#/shop">Ver produtos</a></p>';
+      app.innerHTML += '<p class="muted">Seu carrinho está vazio. <a href="#/services">Ver nossos serviços</a></p>';
       return;
     }
 
@@ -114,8 +114,8 @@
         const phone = window.WhatsAppConfig && window.WhatsAppConfig.PHONE ? window.WhatsAppConfig.PHONE : '5581999999999';
         window.open(`https://wa.me/${phone}?text=${text}`,'_blank');
       }
-      // Rerender: volta para loja se window.Shop existe
-      setTimeout(()=>{ if(window.Shop) window.Shop.render(); else document.getElementById('app').innerHTML=''; },800);
+      // Rerender: redireciona para serviços após finalizar pedido
+      setTimeout(()=>{ location.hash = '/services'; },800);
     });
   }
 

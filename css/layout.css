@@ -1,17 +1,21 @@
 .site-header {
-  background: rgba(2,6,23,0.6);
+  background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.4));
   position: sticky; top: 0; z-index: 40; backdrop-filter: blur(6px);
 }
 
+/* Hide-on-scroll helper: smooth hide (slide up + fade) and restore on scroll up */
+.site-header { transition: transform .28s cubic-bezier(.2,.9,.2,1), opacity .28s ease; }
+.site-header.site-header-hidden { transform: translateY(-110%); opacity: 0; pointer-events: none; }
+
 .header-inner { display:flex; gap:var(--gap); align-items:center; justify-content:space-between; padding:.8rem 0; }
 
-.logo { font-weight:700; font-size:1.1rem; color:var(--text); }
+.logo { font-weight:800; font-size:1.15rem; color:var(--accent); letter-spacing:0.6px }
 
 .main-nav { display:flex; gap:.8rem; align-items:center; }
 
 .main-nav a { padding:.45rem .6rem; border-radius:6px; color:var(--muted); }
 
-.main-nav a:hover, .main-nav a:focus { color:var(--text); background:rgba(255,255,255,0.02); }
+.main-nav a:hover, .main-nav a:focus { color:var(--text); background: rgba(255,212,0,0.08); border-radius:6px; }
 
 .main-nav.open { display:block; }
 .menu-toggle { display:none; }
